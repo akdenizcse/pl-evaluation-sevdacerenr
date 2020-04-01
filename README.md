@@ -15,6 +15,8 @@
 8. [ Example Codes ](#Example-Codes) 
    * [Exploring Data](#ExploringData) 
    * [Managing Data](#ManagingData)
+   * [Linear Regression](#LinearRegression)
+   * [Polynomial Regression](#PolynomialRegression)
 9. [ Things that are specific to R language? ](#Things-that-are-specific-to-R-language) 
 10. [ RESOURCES ](#RESOURCES) 
 
@@ -233,6 +235,13 @@ As an example, we gave "Exploring Data" and "Managing Data".
 [Code with Html](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ManagingData.Rhtml) :arrow_right: When you download and run it in R-studio, an image like html will appear.
 
 [Html on Server](https://rpubs.com/Ceren/ManagingData) :arrow_right: When you click on the link, you can see the code and results written in html format.
+
+<a name="LinearRegression"></a>
+* Simple Linear Regression:
+
+
+<a name="PolynomialRegression"></a>
+* Polynomial Regression: 
 
 <a name="Things-that-are-specific-to-R-language"></a>
 ## Things That Are Specific To R Language?
