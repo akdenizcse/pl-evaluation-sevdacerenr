@@ -1,16 +1,13 @@
 
+#Exploring Data
 
 custdata <- read.table('https://github.com/scizmeli/datascience_class_helper_files/raw/master/custdata1.tsv',header=T,sep=',')
 
-
 head(custdata)
-
 summary(custdata)
-
 class(custdata$income)
 
 #PLOT
-
 plot(custdata$income, col = "red")
 
 #library(ggplot)
@@ -25,9 +22,7 @@ ggplot(custdata) +
   coord_flip() +
   theme(axis.text.y=element_text(size=rel(0.8)))
 
-
 # BAR CHARTS FOR TWO CATEGORICAL VARIABLES
-
 ggplot(custdata) + geom_bar(aes(x=marital.stat,
                                 fill=health.ins))
 
@@ -42,9 +37,7 @@ ggplot(custdata) +
            ="dodge") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-
 #Examining the correlation between age and income
-
 custdata2 <- subset(custdata,(custdata$age > 0 & custdata$age < 100 & custdata$income > 0))
 cor(custdata2$age, custdata2$income)
 head(custdata2)
@@ -59,7 +52,6 @@ ggplot(custdata2, aes(x=age, y=income)) + geom_point() + geom_smooth() +
   ylim(0, 200000)
 
 #HEXBIN PLOTS
-
 #install.packages("hexbin")
 library(hexbin)
 ggplot(custdata2, aes(x=age, y=income)) + geom_hex(binwidth=c(5, 10000)) +
