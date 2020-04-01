@@ -196,8 +196,25 @@ You can also easily download via package managers such as "Homebrew", "MacPorts"
 <a name="Example-Codes"></a>
 ## Example Codes
 
+As an example, we gave "Exploring Data" and "Managing Data".
+
+
+* **Exploring Data:** We examined the data in an existing dataset and established relationships between each other. We sought answers to our questions such as which data, which data is related, or which data has less impact than others. We made them by ploting and analyzing various graphs with simple codes.
+
+[Code](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ExploringData.R)
+
+[Code with Html](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ExploringData.html) :arrow_right: You can Download and run in R-Studio like html.
+
+* **Managing Data:** There were problems such as leaving some values blank in the examined data set, not reaching some values. In order to understand the reason for these empty values, we thought different ideas and took action on the data. We have associated this blank data with other categories and made (tried) data transformation.
+
+[Code](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ManagingData.R)
+
+[Code with Html](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ManagingData.Rhtml) :arrow_right: You can Download and run in R-Studio like html.
+
 <a name="Things-that-are-specific-to-R-language"></a>
-## Things that are specific to R language?
+## Things That Are Specific To R Language?
+
+
 
 <a name="RESOURCES"></a>
 ## RESOURCES
