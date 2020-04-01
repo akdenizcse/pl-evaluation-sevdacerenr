@@ -220,7 +220,7 @@ The fact that R language is closer to the spoken language than other languages i
 <a name="RESOURCES"></a>
 ## RESOURCES
 
-1. [R Programming Language](https://en.wikipedia.org/wiki/R_(programming_language)
+1. [R Programming Language](https://en.wikipedia.org/wiki/R_(programming_language))
 2. [R Tutorial](https://techvidvan.com/tutorials/r-tutorial/)
 3. [Why Use The R Language ?](https://www.burns-stat.com/documents/tutorials/why-use-the-r-language/)
 4. [R Programming For Data Science](https://bookdown.org/rdpeng/rprogdatascience/)
