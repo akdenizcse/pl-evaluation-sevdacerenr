@@ -69,7 +69,7 @@ In 1995, Martin Mächler made an important contribution by convincing Ross and R
 In 1996, a public mailing list was created (the R-help and R-devel lists) and in 1997 the R Core Group was formed, containing some people associated with S and S-PLUS. Currently, the core group controls the source code for R and is solely able to check in changes to the main R source tree. Finally, in 2000 R version 1.0.0 was released to the public.
 
 <a name="Why-Was-It-Invented"></a>
-## Why Was It Invented :grey_question:
+## Why Was It Invented :question:
 
 The general “S” sets the stage for the design of the language itself, which many programming veterans find a bit odd and confusing. In particular, it’s important to realize that the S language had its roots in data analysis, and did not come from a traditional programming language background. Its inventors were focused on figuring out how to make data analysis easier, first for themselves, and then eventually for others.
 
@@ -120,7 +120,7 @@ The R community is very strong, and quite committed to improving data analysis.
 
 
 <a name="When-Shall-We-Use-It"></a>
-## When Shall We Use It :grey_question: 
+## When Shall We Use It :question:
 
 
 Data Science and Big Data have proved themselves useful and even necessary in many different fields and industries today. It helps them to keep up with the trends and capitalize on every opportunity.
@@ -250,7 +250,7 @@ As an example, we gave "Exploring Data" and "Managing Data".
 * **Polynomial Regression:** We made a simple polynomial regression according to the distribution of the data in an existing dataset.
 
 <a name="Things-that-are-specific-to-R-language"></a>
-## Things That Are Specific To R Language :grey_question:
+## Things That Are Specific To R Language :question:
 
 The fact that R language is closer to the spoken language than other languages is one of the biggest features that distinguishes it. We do not have difficulty and do not have much trouble in learning this language. The features such as "html" and "notebook" in R language help us to write an explanation while writing the code. This feature is different from other applications. This language, made for statistics and mathematics, is widely used in Data Science and Big Data Analysis. Because, since data science also passes many statistical calculations, it is much easier and more convenient to write in a language that reduces statistics operations to easy.
 
