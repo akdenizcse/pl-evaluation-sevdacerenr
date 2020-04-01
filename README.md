@@ -1,5 +1,5 @@
 
-# The Evolution Of The   <img src="https://user-images.githubusercontent.com/36292743/78153266-b89e9500-73ef-11ea-9a14-713d45be2105.png" width="50" height="50"> 
+# The Evolution Of The   <img src="https://user-images.githubusercontent.com/36292743/78153266-b89e9500-73ef-11ea-9a14-713d45be2105.png" width="60" height="50"> 
 
 
 1. [ Authors ](#Authors)
