@@ -17,7 +17,7 @@
    * [Managing Data](#ManagingData)
    * [Linear Regression](#LinearRegression)
    * [Polynomial Regression](#PolynomialRegression)
-9. [ Things that are specific to R language ? ](#Things-that-are-specific-to-R-language) 
+9. [ Things That Are Specific To R Language ? ](#Things-that-are-specific-to-R-language) 
 10. [ RESOURCES ](#RESOURCES) 
 
 <a name="Authors"></a>
