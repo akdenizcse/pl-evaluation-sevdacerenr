@@ -1,6 +1,19 @@
+
 # The Evolution Of The   <img src="https://user-images.githubusercontent.com/36292743/78153266-b89e9500-73ef-11ea-9a14-713d45be2105.png" width="50" height="50"> 
 
-## Author(s) 
+1. [ Authors ](#Authors)
+2. [ History Of The Language ](#History-Of-The-Language)
+3. [ Why Was It Invented ](#Why-Was-It-Invented) 
+4. [ Why Shall We Use It ? ](#Why-Shall-We-Use-It)  
+5. [ When Shall We Use It ? ](#When-Shall-We-Use-It) 
+6. [ How To Setup R ? ](#How-To-Setup-R) 
+7. [ How To Setup R-Studio ? ](#How-To-Setup-R-Studio) 
+8. [ Example Codes ](#Example-Codes) 
+9. [ Things that are specific to R language? ](#Things-that-are-specific-to-R-language) 
+10. [ RESOURCES ](#RESOURCES) 
+
+<a name="Authors"></a>
+## Authors
 
 * **George Ross Ihaka**
 
@@ -14,7 +27,7 @@
 
 *Research: Computational Biology, Revolution Analytics*
 
-
+<a name="History-Of-The-Language"></a>
 ## History Of The Language
 
 If we need to look at the history of R language, we must first examine the S. Because R is a dialect of S. S is a language that was developed by John Chambers and others at the old Bell Laboratories. S was invented in 1976 as an internal statistical analysis environment- originally implemented as Fortran libraries. Early versions of the language did not contain functions for statistical modeling.
@@ -47,7 +60,7 @@ In 1995, Martin Mächler made an important contribution by convincing Ross and R
 
 In 1996, a public mailing list was created (the R-help and R-devel lists) and in 1997 the R Core Group was formed, containing some people associated with S and S-PLUS. Currently, the core group controls the source code for R and is solely able to check in changes to the main R source tree. Finally, in 2000 R version 1.0.0 was released to the public.
 
-
+<a name="Why-Was-It-Invented"></a>
 ## Why Was It Invented
 
 The general “S” sets the stage for the design of the language itself, which many programming veterans find a bit odd and confusing. In particular, it’s important to realize that the S language had its roots in data analysis, and did not come from a traditional programming language background. Its inventors were focused on figuring out how to make data analysis easier, first for themselves, and then eventually for others.
@@ -61,7 +74,7 @@ The key part here was the transition from user to developer. They wanted to buil
 So, as a conclusion R language was invented for performing statistical operations suitable for statistical software and data analysis that is widely wanted among statisticians and data miners.
 
 
-
+<a name="Why-Shall-We-Use-It"></a>
 ## Why Shall We Use It ?
 
 R language have become most popular language in the world of Data Science. It is heavily used in analyzing data that is both structured and unstructured.
@@ -91,6 +104,8 @@ R has a package system that makes it extremely easy for people to add their own 
 
 The R community is very strong, and quite committed to improving data analysis.
 
+
+<a name="When-Shall-We-Use-It"></a>
 ## When Shall We Use It ? 
 
 
@@ -103,7 +118,8 @@ R is used as a tool when we want to make sense of big data and to gain use from 
 </p>
 
 
-## How To Setup R
+<a name="How-To-Setup-R"></a>
+## How To Setup R ?
 
 **Linux:**
 It is not always possible to reach the latest version of the "R project" installed in Linux. The "R" differs between Microsoft and Linux in their latest versions. 
@@ -162,7 +178,9 @@ You can also easily download via package managers such as "Homebrew", "MacPorts"
   <img src="https://user-images.githubusercontent.com/36292743/78155300-22b83980-73f2-11ea-8607-e4ac781ec2eb.png" width="400" height="100"/>
 </p>
 
-## How To Setup R-Studio
+
+<a name="How-To-Setup-R-Studio"></a>
+## How To Setup R-Studio ?
 
 "R" language is mostly used in "R-studio" environment. Installing "R-studio" on the computer is very easy and fast. R-studio has a document for all platforms on its site. By downloading them, "R-studio" can be installed easily. 
 
@@ -174,10 +192,12 @@ You can also easily download via package managers such as "Homebrew", "MacPorts"
   <img src="https://user-images.githubusercontent.com/36292743/78155581-80e51c80-73f2-11ea-9057-c69bf52c15e5.png" width="600" height="300"/>
 </p>
 
-
+<a name="Example-Codes"></a>
 ## Example Codes
 
+<a name="Things-that-are-specific-to-R-language"></a>
 ## Things that are specific to R language?
 
+<a name="RESOURCES"></a>
 ## RESOURCES
 
