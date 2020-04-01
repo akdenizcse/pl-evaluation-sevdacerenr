@@ -4,7 +4,7 @@
 
 1. [ Authors ](#Authors)
 2. [ History Of The Language ](#History-Of-The-Language)
-3. [ Why Was It Invented ](#Why-Was-It-Invented) 
+3. [ Why Was It Invented ?](#Why-Was-It-Invented) 
 4. [ Why Shall We Use It ? ](#Why-Shall-We-Use-It)  
 5. [ When Shall We Use It ? ](#When-Shall-We-Use-It) 
 6. [ Setup R ](#How-To-Setup-R) 
@@ -83,7 +83,7 @@ So, as a conclusion R language was invented for performing statistical operation
 
 
 <a name="Why-Shall-We-Use-It"></a>
-## Why Shall We Use It :grey_question:
+## Why Shall We Use It :question:
 
 R language have become most popular language in the world of Data Science. It is heavily used in analyzing data that is both structured and unstructured.
 
