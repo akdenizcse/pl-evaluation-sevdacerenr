@@ -1,0 +1,285 @@
+<html>
+
+<head>
+<style type="text/css">
+.inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.str {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.std {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+<title>Title</title>
+</head>
+
+<body>
+
+<b>Managing Data Using R</b>
+
+<p> 
+- Fixing data quality problems
+- Organizing your data for the modeling process
+</p>
+
+<div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(ggplot2)</span>
+</pre></div>
+</div></div>
+
+<p>Treating missing values (NAs)</p>
+
+<div class="chunk" id="unnamed-chunk-2"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">custdata</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">read.table</span><span class="hl std">(</span><span class="hl str">'https://github.com/scizmeli/datascience_class_helper_files/raw/master/custdata1.tsv'</span><span class="hl std">,</span><span class="hl kwc">header</span><span class="hl std">=T,</span><span class="hl kwc">sep</span><span class="hl std">=</span><span class="hl str">','</span><span class="hl std">)</span>
+</pre></div>
+</div></div>
+
+<p> There are two things you can do with these variables: 
+
+drop the rows with missing values or convert the missing values to a meaningful value. </p>
+
+<div class="chunk" id="unnamed-chunk-3"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">summary</span><span class="hl std">(custdata[,</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;housing.type&quot;</span> <span class="hl std">,</span><span class="hl str">&quot;recent.move&quot;</span> <span class="hl std">,</span> <span class="hl str">&quot;num.vehicles&quot;</span> <span class="hl std">,</span> <span class="hl str">&quot;is.employed&quot;</span><span class="hl std">)])</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##                        housing.type recent.move      num.vehicles  
+##  Homeowner free and clear    :157   Mode :logical   Min.   :0.000  
+##  Homeowner with mortgage/loan:412   FALSE:820       1st Qu.:1.000  
+##  Occupied with no rent       : 11   TRUE :124       Median :2.000  
+##  Rented                      :364   NA's :56        Mean   :1.916  
+##  NA's                        : 56                   3rd Qu.:2.000  
+##                                                     Max.   :6.000  
+##                                                     NA's   :56     
+##  is.employed    
+##  Mode :logical  
+##  FALSE:73       
+##  TRUE :599      
+##  NA's :328      
+##                 
+##                 
+## 
+</pre></div>
+</div></div>
+
+<p> The is.employed variable is missing many values.
+Is employment status unknown? </p>
+
+<div class="chunk" id="unnamed-chunk-4"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">custdata</span><span class="hl opt">$</span><span class="hl std">is.employed.fix</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ifelse</span><span class="hl std">(</span><span class="hl kwd">is.na</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">is.employed),</span>
+<span class="hl str">&quot;missing&quot;</span><span class="hl std">,</span>
+<span class="hl kwd">ifelse</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">is.employed</span><span class="hl opt">==</span><span class="hl std">T,</span>
+<span class="hl str">&quot;employed&quot;</span><span class="hl std">,</span>
+<span class="hl str">&quot;not employed&quot;</span><span class="hl std">))</span>
+<span class="hl kwd">summary</span><span class="hl std">(</span><span class="hl kwd">as.factor</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">is.employed.fix))</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##     employed      missing not employed 
+##          599          328           73
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl std">custdata</span><span class="hl opt">$</span><span class="hl std">is.employed.fix</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ifelse</span><span class="hl std">(</span><span class="hl kwd">is.na</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">is.employed),</span>
+<span class="hl str">&quot;not in active workforce&quot;</span><span class="hl std">,</span>
+<span class="hl kwd">ifelse</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">is.employed</span><span class="hl opt">==</span><span class="hl std">T,</span>
+<span class="hl str">&quot;employed&quot;</span><span class="hl std">,</span>
+<span class="hl str">&quot;not employed&quot;</span><span class="hl std">))</span>
+<span class="hl kwd">summary</span><span class="hl std">(</span><span class="hl kwd">as.factor</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">is.employed.fix))</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##                employed            not employed not in active workforce 
+##                     599                      73                     328
+</pre></div>
+</div></div>
+
+<p> MISSING VALUES IN NUMERIC DATA </p>
+
+<div class="chunk" id="unnamed-chunk-5"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">summary</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">Income)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##       0   25000   45000   66199   82000  615000     328
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl std">meanIncome</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">mean</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">Income,</span> <span class="hl kwc">na.rm</span><span class="hl std">=T)</span>
+<span class="hl std">meanIncome</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 66198.67
+</pre></div>
+</div></div>
+
+<p>WHEN VALUES ARE MISSING RANDOMLY.
+
+You might believe that the data is missing because of a faulty sensor-in other words, the data collection failed at random. In this case, you can replace the missing values with the expected, or mean, income </p>
+
+
+<div class="chunk" id="unnamed-chunk-6"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">meanIncome</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">mean</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">Income,</span> <span class="hl kwc">na.rm</span><span class="hl std">=T)</span>
+
+<span class="hl std">Income.fix</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ifelse</span><span class="hl std">(</span><span class="hl kwd">is.na</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">Income),</span>
+<span class="hl std">meanIncome, custdata</span><span class="hl opt">$</span><span class="hl std">Income)</span>
+
+<span class="hl kwd">summary</span><span class="hl std">(Income.fix)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##       0   35000   66199   66199   66199  615000
+</pre></div>
+</div></div>
+
+<p> WHEN VALUES ARE MISSING SYSTEMATICALLY.
+
+One thing you can do is to convert the numeric data into categorical data, and then use the methods that we discussed previously. In this case, you would divide the income into some income categories of interest, such as "below $10,000," or "from $100,000 to $250,000" using the cut() function, and then treat the NAs as we did when working with missing categorical values. </p>
+
+<div class="chunk" id="unnamed-chunk-7"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">breaks</span> <span class="hl kwb">&lt;-</span><span class="hl kwd">c</span><span class="hl std">(</span><span class="hl num">0</span><span class="hl std">,</span> <span class="hl num">10000</span><span class="hl std">,</span> <span class="hl num">50000</span><span class="hl std">,</span> <span class="hl num">100000</span><span class="hl std">,</span> <span class="hl num">250000</span><span class="hl std">,</span> <span class="hl num">1000000</span><span class="hl std">)</span>
+
+<span class="hl std">Income.groups</span> <span class="hl kwb">&lt;-</span>
+<span class="hl kwd">cut</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">Income,</span><span class="hl kwc">breaks</span> <span class="hl std">= breaks,</span> <span class="hl kwc">include.lowest</span><span class="hl std">=T)</span>
+
+<span class="hl kwd">summary</span><span class="hl std">(Income.groups)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##       [0,1e+04]   (1e+04,5e+04]   (5e+04,1e+05] (1e+05,2.5e+05] (2.5e+05,1e+06] 
+##              63             312             178              98              21 
+##            NA's 
+##             328
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl std">Income.groups</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">as.character</span><span class="hl std">(Income.groups)</span>
+
+<span class="hl std">Income.groups</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ifelse</span><span class="hl std">(</span><span class="hl kwd">is.na</span><span class="hl std">(Income.groups),</span><span class="hl str">&quot;no income&quot;</span><span class="hl std">, Income.groups)</span>
+
+<span class="hl kwd">summary</span><span class="hl std">(</span><span class="hl kwd">as.factor</span><span class="hl std">(Income.groups))</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##   (1e+04,5e+04] (1e+05,2.5e+05] (2.5e+05,1e+06]   (5e+04,1e+05]       [0,1e+04] 
+##             312              98              21             178              63 
+##       no income 
+##             328
+</pre></div>
+</div></div>
+
+<p> Data transformations </p>
+
+<div class="chunk" id="unnamed-chunk-8"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">medianincome</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">aggregate</span><span class="hl std">(income</span><span class="hl opt">~</span><span class="hl std">state.of.res,custdata,</span><span class="hl kwc">FUN</span><span class="hl std">=median)</span>
+<span class="hl kwd">colnames</span><span class="hl std">(medianincome)</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">'State'</span><span class="hl std">,</span><span class="hl str">'Median.Income'</span><span class="hl std">)</span>
+<span class="hl kwd">summary</span><span class="hl std">(medianincome)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##         State    Median.Income   
+##  Alabama   : 1   Min.   :  6300  
+##  Alaska    : 1   1st Qu.: 28400  
+##  Arizona   : 1   Median : 36050  
+##  Arkansas  : 1   Mean   : 39776  
+##  California: 1   3rd Qu.: 42938  
+##  Colorado  : 1   Max.   :139000  
+##  (Other)   :44
+</pre></div>
+</div></div>
+
+<div class="chunk" id="unnamed-chunk-9"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">is.data.frame</span><span class="hl std">(medianincome)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] TRUE
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl kwd">head</span><span class="hl std">(medianincome)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##        State Median.Income
+## 1    Alabama         39900
+## 2     Alaska         41000
+## 3    Arizona         52750
+## 4   Arkansas         15800
+## 5 California         36100
+## 6   Colorado         31000
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl std">custdata</span> <span class="hl kwb">&lt;-</span> <span class="hl std">custdata[,</span> <span class="hl kwd">names</span><span class="hl std">(custdata)</span><span class="hl opt">!=</span><span class="hl str">&quot;Median.Income&quot;</span><span class="hl std">]</span>
+<span class="hl std">custdata</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">merge</span><span class="hl std">(custdata, medianincome,</span> <span class="hl kwc">by.x</span> <span class="hl std">=</span> <span class="hl str">&quot;state.of.res&quot;</span><span class="hl std">,</span> <span class="hl kwc">by.y</span><span class="hl std">=</span><span class="hl str">&quot;State&quot;</span><span class="hl std">)</span>
+
+<span class="hl kwd">head</span><span class="hl std">(custdata[,</span> <span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;state.of.res&quot;</span><span class="hl std">,</span><span class="hl str">&quot;income&quot;</span><span class="hl std">,</span><span class="hl str">&quot;Median.Income&quot;</span><span class="hl std">)])</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##   state.of.res income Median.Income
+## 1      Alabama  82000         39900
+## 2      Alabama  49000         39900
+## 3      Alabama   7000         39900
+## 4      Alabama  37200         39900
+## 5      Alabama  70000         39900
+## 6      Alabama      0         39900
+</pre></div>
+</div></div>
+
+<div class="chunk" id="unnamed-chunk-10"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">summary</span><span class="hl std">(custdata[,</span> <span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;state.of.res&quot;</span><span class="hl std">,</span><span class="hl str">&quot;income&quot;</span><span class="hl std">,</span><span class="hl str">&quot;Median.Income&quot;</span><span class="hl std">)])</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##        state.of.res     income       Median.Income   
+##  California  :114   Min.   : -8700   Min.   :  6300  
+##  New York    : 94   1st Qu.: 14600   1st Qu.: 32000  
+##  Pennsylvania: 63   Median : 35000   Median : 35000  
+##  Ohio        : 59   Mean   : 53505   Mean   : 35424  
+##  Illinois    : 52   3rd Qu.: 67000   3rd Qu.: 39500  
+##  Texas       : 51   Max.   :615000   Max.   :139000  
+##  (Other)     :567
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl std">custdata</span><span class="hl opt">$</span><span class="hl std">income.norm</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">with</span><span class="hl std">(custdata, income</span><span class="hl opt">/</span><span class="hl std">Median.Income)</span>
+
+<span class="hl kwd">summary</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">income.norm)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## -0.2939  0.4473  1.0000  1.5555  1.9129 22.0630
+</pre></div>
+</div></div>
+
+<p> Normalize income by Median.Income. </p>
+
+<div class="chunk" id="unnamed-chunk-11"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">ggplot</span><span class="hl std">(</span><span class="hl kwd">subset</span><span class="hl std">(custdata, custdata</span><span class="hl opt">$</span><span class="hl std">income</span> <span class="hl opt">&gt;</span> <span class="hl num">1000</span><span class="hl std">),</span> <span class="hl kwd">aes</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">=income,</span> <span class="hl kwc">y</span><span class="hl std">=</span><span class="hl kwd">as.numeric</span><span class="hl std">(health.ins)))</span> <span class="hl opt">+</span>
+   <span class="hl kwd">geom_point</span><span class="hl std">(</span><span class="hl kwc">alpha</span><span class="hl std">=</span><span class="hl num">0.5</span><span class="hl std">,</span> <span class="hl kwc">position</span><span class="hl std">=</span><span class="hl kwd">position_jitter</span><span class="hl std">(</span><span class="hl kwc">w</span><span class="hl std">=</span><span class="hl num">0.05</span><span class="hl std">,</span> <span class="hl kwc">h</span><span class="hl std">=</span><span class="hl num">0.05</span><span class="hl std">))</span> <span class="hl opt">+</span> <span class="hl kwd">geom_smooth</span><span class="hl std">()</span> <span class="hl opt">+</span> <span class="hl kwd">scale_x_log10</span><span class="hl std">()</span> <span class="hl opt">+</span>
+   <span class="hl kwd">annotation_logticks</span><span class="hl std">(</span><span class="hl kwc">sides</span><span class="hl std">=</span><span class="hl str">&quot;bt&quot;</span><span class="hl std">)</span>
+</pre></div>
+<div class="message"><pre class="knitr r">## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+</pre></div>
+</div><div class="rimage default"><img src="figure/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" class="plot" /></div></div>
+
+<p> You see that you can replace the income variable with a Boolean variable that indicates whether income is less than $20,000 </p>
+
+<div class="chunk" id="unnamed-chunk-12"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">custdata</span><span class="hl opt">$</span><span class="hl std">income.lt.20K</span> <span class="hl kwb">&lt;-</span> <span class="hl std">custdata</span><span class="hl opt">$</span><span class="hl std">income</span> <span class="hl opt">&lt;</span> <span class="hl num">20000</span>
+<span class="hl kwd">summary</span><span class="hl std">(custdata</span><span class="hl opt">$</span><span class="hl std">income.lt.20K)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">##    Mode   FALSE    TRUE 
+## logical     678     322
+</pre></div>
+</div></div>
+
+</body>
+</html>
