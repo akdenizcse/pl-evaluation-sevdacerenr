@@ -237,11 +237,11 @@ As an example, we gave "Exploring Data" and "Managing Data".
 [Html on Server](https://rpubs.com/Ceren/ManagingData) :arrow_right: When you click on the link, you can see the code and results written in html format.
 
 <a name="LinearRegression"></a>
-* Simple Linear Regression:
+* **Simple Linear Regression:** We made a simple linear regression according to the distribution of the data in an existing dataset.
 
 
 <a name="PolynomialRegression"></a>
-* Polynomial Regression: 
+* **Polynomial Regression:** We made a simple polynomial regression according to the distribution of the data in an existing dataset.
 
 <a name="Things-that-are-specific-to-R-language"></a>
 ## Things That Are Specific To R Language?
