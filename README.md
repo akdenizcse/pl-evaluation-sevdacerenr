@@ -2,11 +2,6 @@
 # The Evolution Of The   <img src="https://user-images.githubusercontent.com/36292743/78153266-b89e9500-73ef-11ea-9a14-713d45be2105.png" width="50" height="50"> 
 
 
-<p align="center">
-  <img src="https://www.yaziliresimler.com/images/sekilli-CEREN-yazisi.png" width="600" height="350"/>
-</p>
-
-
 1. [ Authors ](#Authors)
 2. [ History Of The Language ](#History-Of-The-Language)
 3. [ Why Was It Invented ](#Why-Was-It-Invented) 
