@@ -1,0 +1,132 @@
+<html>
+
+<head>
+<title></title>
+</head>
+
+<body>
+
+<b>Exploring Data Using R</b>
+
+<p>We will make data discovery with the data set given below.</p>
+
+<!--begin.rcode
+
+custdata <- read.table('https://github.com/scizmeli/datascience_class_helper_files/raw/master/custdata1.tsv',header=T,sep=',')
+
+end.rcode-->
+
+<p>This data set is as follows:</p>
+
+<!--begin.rcode 
+head(custdata)
+end.rcode-->
+
+<p> The "summary" code clearly shows how many data is in which column. </p>
+
+<!--begin.rcode 
+summary(custdata)
+end.rcode-->
+
+<p> Income ranges from zero to over half a million dollars; a very wide range.! </p>
+
+<!--begin.rcode 
+class(custdata$income)
+end.rcode-->
+
+<p> Spotting problems using graphics and visualization </p>
+
+<!--begin.rcode 
+plot(custdata$income, col = "red")
+end.rcode-->
+
+<p> A histogram tells you where your data is concentrated. It also visually highlights outliers and anomalies. </p>
+
+<!--begin.rcode
+#library(ggplot)
+library(ggplot2)
+library(scales)
+ggplot(custdata) + geom_density(aes(x=income)) +
+scale_x_continuous(labels=dollar)
+end.rcode-->
+
+
+<p> "aes(x=marital.stat)" in this code "marital.stat" value that is we want to plot </p>
+
+<!--begin.rcode
+ggplot(custdata) + 
+geom_bar(aes(x=state.of.res), 
+fill="purple") +
+coord_flip() +
+theme(axis.text.y=element_text(size=rel(0.8)))
+end.rcode-->
+
+<p> BAR CHARTS FOR TWO CATEGORICAL VARIABLES
+
+Let's examine the relationship between marital status and the probability of health insurance coverage. The most straightforward way to visualize this is with a stacked bar chart, as shown in figure 3.15. </p>
+
+<!--begin.rcode
+ggplot(custdata) + geom_bar(aes(x=marital.stat,
+fill=health.ins))
+end.rcode-->
+
+
+<p> Plotting data with a rug </p>
+
+<!--begin.rcode
+ggplot(custdata, aes(x=marital.stat)) +
+geom_bar(aes(fill=health.ins), position="fill") +
+geom_point(aes(y=-0.05), size=0.75, alpha=0.3,
+position=position_jitter(h=0.01))
+end.rcode-->
+
+<p> Plotting a bar chart with and without facets </p>
+<!--begin.rcode
+ggplot(custdata) +
+geom_bar(aes(x=housing.type, fill=marital.stat ),
+position="dodge") +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+end.rcode-->
+
+<p> Examining the correlation between age and income </p>
+
+<!--begin.rcode
+custdata2 <- subset(custdata,(custdata$age > 0 & custdata$age < 100 & custdata$income > 0))
+cor(custdata2$age, custdata2$income)
+head(custdata2)
+end.rcode-->
+
+
+<p> The negative correlation is surprising, since you'd expect that income should increase as people get older. A visualization gives you more insight into what's going on than a single number can. Let's try a scatter plot first; you plot figure </p>
+
+<!--begin.rcode
+ggplot(custdata2, aes(x=age, y=income)) +
+geom_point() + ylim(0, 200000)
+end.rcode-->
+
+<!--begin.rcode
+ggplot(custdata2, aes(x=age, y=income)) + geom_point() + stat_smooth(method="lm") +
+ylim(0, 200000)
+end.rcode-->
+
+
+<p> In this case, the linear fit doesn't really capture the shape of the data. You can better capture the shape by instead plotting a smoothing curve through the data </p>
+
+<!--begin.rcode
+ggplot(custdata2, aes(x=age, y=income)) + geom_point() + geom_smooth() +
+ylim(0, 200000)
+end.rcode-->
+
+<p> HEXBIN PLOTS
+A hexbin plot is like a two-dimensional histogram. The data is divided into bins, and the number of data points in each bin is represented by color or shading. Let's go back to the income versus age example.</p>
+
+<!--begin.rcode
+#install.packages("hexbin")
+library(hexbin)
+ggplot(custdata2, aes(x=age, y=income)) + geom_hex(binwidth=c(5, 10000)) +
+geom_smooth(color="white", se=F) +
+ylim(0,200000)
+end.rcode-->
+
+</body>
+</html>
