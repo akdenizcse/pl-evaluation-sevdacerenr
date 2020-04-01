@@ -8,8 +8,13 @@
 4. [ Why Shall We Use It ? ](#Why-Shall-We-Use-It)  
 5. [ When Shall We Use It ? ](#When-Shall-We-Use-It) 
 6. [ How To Setup R ? ](#How-To-Setup-R) 
+   * [Linux](#Linux) 
+   * [Mac](#Mac) 
+   * [Microsoft](#Microsoft) 
 7. [ How To Setup R-Studio ? ](#How-To-Setup-R-Studio) 
 8. [ Example Codes ](#Example-Codes) 
+   * [Exploring Data](#ExploringData) 
+   * [Managing Data](#ManagingData)
 9. [ Things that are specific to R language? ](#Things-that-are-specific-to-R-language) 
 10. [ RESOURCES ](#RESOURCES) 
 
@@ -122,6 +127,7 @@ R is used as a tool when we want to make sense of big data and to gain use from 
 <a name="How-To-Setup-R"></a>
 ## How To Setup R ?
 
+<a name="Linux"></a>
 **Linux:**
 It is not always possible to reach the latest version of the "R project" installed in Linux. The "R" differs between Microsoft and Linux in their latest versions. 
 
@@ -154,6 +160,7 @@ After, you can verify by writing "sudo -i R" on the command line.
 Finally, you can view the preliminary contents with “demo()”. 
 
 
+<a name="Mac"></a>
 **Mac**
 
 “R” setup for Mac is done as follows:
@@ -177,7 +184,7 @@ You can also easily download via package managers such as "Homebrew", "MacPorts"
  
 ```
 
-
+<a name="Microsoft"></a>
 **Microsoft**
 
 "R" setup for Microsoft is very practical and fast. By downloading the R document for Windows on the "R" site to your computer, you will complete the download process.
@@ -209,7 +216,7 @@ You can also easily download via package managers such as "Homebrew", "MacPorts"
 
 As an example, we gave "Exploring Data" and "Managing Data".
 
-
+<a name="ExploringData"></a>
 * **Exploring Data:** We examined the data in an existing dataset and established relationships between each other. We sought answers to our questions such as which data, which data is related, or which data has less impact than others. We made them by ploting and analyzing various graphs with simple codes.
 
 [Code](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ExploringData.R) :arrow_right: This is the code of the above example.
@@ -218,6 +225,7 @@ As an example, we gave "Exploring Data" and "Managing Data".
 
 [Html on Server](https://rpubs.com/Ceren/ExploringData) :arrow_right: When you click on the link, you can see the code and results written in html format.
 
+<a name="ManagingData"></a>
 * **Managing Data:** There were problems such as leaving some values blank in the examined data set, not reaching some values. In order to understand the reason for these empty values, we thought different ideas and took action on the data. We have associated this blank data with other categories and made (tried) data transformation.
 
 [Code](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ManagingData.R) :arrow_right: This is the code of the above example.
