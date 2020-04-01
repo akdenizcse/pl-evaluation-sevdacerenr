@@ -103,7 +103,7 @@ R is used as a tool when we want to make sense of big data and to gain use from 
 </p>
 
 
-## How To Setup An Environment
+## How To Setup R
 
 **Linux:**
 It is not always possible to reach the latest version of the "R project" installed in Linux. The "R" differs between Microsoft and Linux in their latest versions. 
@@ -112,4 +112,72 @@ The "R" installation process is as follows:
 
 Installation can be done with “apt-get” packet manager. The installation process is done by compiling "install.packages ()" from the source due to configurations. However, you can choose "r-base" instead of "r-base-dev". Firstly, "SSH" connection is created to the remote server, and then installation is done with the package manager.
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36292743/78153902-6f9b1080-73f0-11ea-9731-281fc2f84525.png" width="600" height="70"/>
+</p>
+
+After, you can verify by writing "sudo -i R" on the command line. 
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36292743/78154086-aec96180-73f0-11ea-810e-7128e71bd050.png" width="600" height="50"/>
+ 
+   <img src="https://user-images.githubusercontent.com/36292743/78154783-82faab80-73f1-11ea-8bc7-52d6c53de933.png" width="500" height="300"/>
+   
+</p>
+
+Finally, you can view the preliminary contents with “demo()”. 
+
+
+**Mac**
+
+“R” setup for Mac is done as follows:
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36292743/78154355-049e0980-73f1-11ea-9c52-fc85f73bf368.png" width="500" height="300"/>
+</p>
+
+You can see the latest version distribution with the necessary information on the "R for Mac OS X" page. "R latest version framework", "R.app" tool are included in the package content you will download over CRAN. 
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36292743/78154520-36af6b80-73f1-11ea-8f8f-03776a167852.png" width="500" height="300"/>
+</p>
+
+
+You can also easily download via package managers such as "Homebrew", "MacPorts", "Conda".
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36292743/78154650-5ba3de80-73f1-11ea-9d05-49aceab1d1ef.png" width="500" height="50"/>
+</p>
+
+
+**Microsoft**
+
+"R" setup for Microsoft is very practical and fast. By downloading the R document for Windows on the "R" site to your computer, you will complete the download process.
+
+* Site: [Click To Download R](https://cran.r-project.org/bin/windows/base/)
+
+* Document in this site: 
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36292743/78155300-22b83980-73f2-11ea-8607-e4ac781ec2eb.png" width="400" height="100"/>
+</p>
+
+## How To Setup R-Studio
+
+"R" language is mostly used in "R-studio" environment. Installing "R-studio" on the computer is very easy and fast. R-studio has a document for all platforms on its site. By downloading them, "R-studio" can be installed easily. 
+
+* Site: [Click to Download R-Studio](https://rstudio.com/products/rstudio/download/#download)
+
+* Documents to download:
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36292743/78155581-80e51c80-73f2-11ea-9057-c69bf52c15e5.png" width="600" height="300"/>
+</p>
+
+
+## Example Codes
+
+## Things that are specific to R language?
+
+## RESOURCES
 
