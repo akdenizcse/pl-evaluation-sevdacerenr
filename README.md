@@ -129,14 +129,23 @@ The "R" installation process is as follows:
 
 Installation can be done with “apt-get” packet manager. The installation process is done by compiling "install.packages ()" from the source due to configurations. However, you can choose "r-base" instead of "r-base-dev". Firstly, "SSH" connection is created to the remote server, and then installation is done with the package manager.
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/36292743/78153902-6f9b1080-73f0-11ea-9731-281fc2f84525.png" width="600" height="70"/>
-</p>
+  ```bash
+
+ ssh root@
+ 
+ sudo apt-get update
+ 
+ sudo apt-get install r-base-dev
+ 
+```
 
 After, you can verify by writing "sudo -i R" on the command line. 
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/36292743/78154086-aec96180-73f0-11ea-810e-7128e71bd050.png" width="600" height="50"/>
+  ```bash
+
+  sudo -i R
+ 
+```
  
    <img src="https://user-images.githubusercontent.com/36292743/78154783-82faab80-73f1-11ea-8bc7-52d6c53de933.png" width="500" height="300"/>
    
@@ -162,9 +171,11 @@ You can see the latest version distribution with the necessary information on th
 
 You can also easily download via package managers such as "Homebrew", "MacPorts", "Conda".
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/36292743/78154650-5ba3de80-73f1-11ea-9d05-49aceab1d1ef.png" width="500" height="50"/>
-</p>
+  ```bash
+
+ brew install r
+ 
+```
 
 
 **Microsoft**
