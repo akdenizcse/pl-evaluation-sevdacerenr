@@ -203,7 +203,7 @@ As an example, we gave "Exploring Data" and "Managing Data".
 
 [Code](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ExploringData.R) :arrow_right: This is the code of the above example.
 
-[Code with Html](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ExploringData.html) :arrow_right: When you download and run it in R-studio, an image like html will appear.
+[Code with Html](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ExploringData.Rhtml) :arrow_right: When you download and run it in R-studio, an image like html will appear.
 
 * **Managing Data:** There were problems such as leaving some values blank in the examined data set, not reaching some values. In order to understand the reason for these empty values, we thought different ideas and took action on the data. We have associated this blank data with other categories and made (tried) data transformation.
 
@@ -214,8 +214,17 @@ As an example, we gave "Exploring Data" and "Managing Data".
 <a name="Things-that-are-specific-to-R-language"></a>
 ## Things That Are Specific To R Language?
 
+The fact that R language is closer to the spoken language than other languages is one of the biggest features that distinguishes it. We do not have difficulty and do not have much trouble in learning this language. The features such as "html" and "notebook" in R language help us to write an explanation while writing the code. This feature is different from other applications. This language, made for statistics and mathematics, is widely used in Data Science and Big Data Analysis. Because, since data science also passes many statistical calculations, it is much easier and more convenient to write in a language that reduces statistics operations to easy.
 
 
 <a name="RESOURCES"></a>
 ## RESOURCES
 
+1. [R Programming Language](https://en.wikipedia.org/wiki/R_(programming_language)
+2. [R Tutorial](https://techvidvan.com/tutorials/r-tutorial/)
+3. [Why Use The R Language ?](https://www.burns-stat.com/documents/tutorials/why-use-the-r-language/)
+4. [R Programming For Data Science](https://bookdown.org/rdpeng/rprogdatascience/)
+5. [Why Choose R Programming For Data Science Projects ?](https://www.newgenapps.com/blog/6-reasons-why-choose-r-programming-for-data-science-projects)
+6. [Setup R in Linux](https://ceaksan.com/tr/linux-ubuntu-r-lang-kurulum/)
+7. [Setup R in Mac](https://ceaksan.com/tr/macos-ortaminda-r-kurulumu/)
+8. [What is R Language](https://ceaksan.com/tr/r-programlama-dili-nedir/)
