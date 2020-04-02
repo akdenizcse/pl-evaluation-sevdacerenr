@@ -240,7 +240,7 @@ As an example, we gave "Exploring Data" and "Managing Data".
 
 [Code with Html](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ManagingData.Rhtml) :arrow_right: When you download and run it in R-studio, an image like html will appear.
 
-[Html on Server](https://rpubs.com/Ceren/ManagingData) :arrow_right: When you click on the link, you can see the code and results written in html format.
+[Html on Server](https://rpubs.com/Ceren/ExploringDataMarcdown) :arrow_right: When you click on the link, you can see the code and results written in html format.
 
 <a name="LinearRegression"></a>
 * **Simple Linear Regression:** We made a simple linear regression according to the distribution of the data in an existing dataset.
