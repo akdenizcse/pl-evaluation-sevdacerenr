@@ -229,18 +229,18 @@ As an example, we gave "Exploring Data" and "Managing Data".
 
 [Code](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ExploringData.R) :arrow_right: This is the code of the above example.
 
-[Code with Html](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ExploringData.Rhtml) :arrow_right: When you download and run it in R-studio, an image like html will appear.
+[Code with Html](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/exploringData.Rmd) :arrow_right: When you download and run it in R-studio, an image like html will appear.
 
-[Html on Server](https://rpubs.com/Ceren/ExploringData) :arrow_right: When you click on the link, you can see the code and results written in html format.
+[Html on Server](https://rpubs.com/Ceren/ExploringDataMarcdown) :arrow_right: When you click on the link, you can see the code and results written in html format.
 
 <a name="ManagingData"></a>
 * **Managing Data:** There were problems such as leaving some values blank in the examined data set, not reaching some values. In order to understand the reason for these empty values, we thought different ideas and took action on the data. We have associated this blank data with other categories and made (tried) data transformation.
 
 [Code](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ManagingData.R) :arrow_right: This is the code of the above example.
 
-[Code with Html](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ManagingData.Rhtml) :arrow_right: When you download and run it in R-studio, an image like html will appear.
+[Code with Html](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ManagingData.Rmd) :arrow_right: When you download and run it in R-studio, an image like html will appear.
 
-[Html on Server](https://rpubs.com/Ceren/ExploringDataMarcdown) :arrow_right: When you click on the link, you can see the code and results written in html format.
+[Html on Server](https://rpubs.com/Ceren/ManagingDataMarkdown) :arrow_right: When you click on the link, you can see the code and results written in html format.
 
 <a name="LinearRegression"></a>
 * **Simple Linear Regression:** We made a simple linear regression according to the distribution of the data in an existing dataset.
