@@ -229,7 +229,7 @@ As an example, we gave "Exploring Data" and "Managing Data".
 
 [Code](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ExploringData.R) :arrow_right: This is the code of the above example.
 
-[Code with Html](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/exploringData.Rmd) :arrow_right: When you download and run it in R-studio, an image like html will appear.
+[Code with Html](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/ExploringData.Rmd) :arrow_right: When you download and run it in R-studio, an image like html will appear.
 
 [Html on Server](https://rpubs.com/Ceren/ExploringDataMarcdown) :arrow_right: When you click on the link, you can see the code and results written in html format.
 
