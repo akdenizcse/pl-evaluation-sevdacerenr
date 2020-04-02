@@ -1,0 +1,152 @@
+---
+title: "Managing Data"
+output: html_document
+---
+
+- Fixing data quality problems
+- Organizing your data for the modeling process
+
+
+```{r library}
+library(ggplot2)
+```
+
+Treating missing values (NAs)
+
+```{r data}
+custdata <- read.table('https://github.com/scizmeli/datascience_class_helper_files/raw/master/custdata1.tsv',header=T,sep=',')
+```
+
+There are two things you can do with these variables: drop the rows with missing values or convert the missing values to a meaningful value. 
+
+
+```{r summary}
+summary(custdata[,c("housing.type" ,"recent.move" , "num.vehicles" , "is.employed")])
+```
+
+
+The is.employed variable is missing many values. Is employment status unknown? 
+
+```{r dataFix1}
+custdata$is.employed.fix <- ifelse(is.na(custdata$is.employed),
+"missing",
+ifelse(custdata$is.employed==T,
+"employed",
+"not employed"))
+summary(as.factor(custdata$is.employed.fix))
+```
+
+
+```{r dataFix2}
+custdata$is.employed.fix <- ifelse(is.na(custdata$is.employed),
+"not in active workforce",
+ifelse(custdata$is.employed==T,
+"employed",
+"not employed"))
+summary(as.factor(custdata$is.employed.fix))
+```
+
+
+**MISSING VALUES IN NUMERIC DATA**
+
+```{r summary2}
+summary(custdata$Income)
+```
+
+
+```{r mean}
+meanIncome <- mean(custdata$Income, na.rm=T)
+meanIncome
+```
+
+
+**WHEN VALUES ARE MISSING RANDOMLY.**
+
+You might believe that the data is missing because of a faulty sensor-in other words, the data collection failed at random. In this case, you can replace the missing values with the expected, or mean, income
+
+
+```{r mean2}
+meanIncome <- mean(custdata$Income, na.rm=T)
+
+Income.fix <- ifelse(is.na(custdata$Income),
+meanIncome, custdata$Income)
+
+summary(Income.fix)
+```
+
+
+**WHEN VALUES ARE MISSING SYSTEMATICALLY.**
+
+One thing you can do is to convert the numeric data into categorical data, and then use the methods that we discussed previously. In this case, you would divide the income into some income categories of interest, such as "below $10,000," or "from $100,000 to $250,000" using the cut() function, and then treat the NAs as we did when working with missing categorical values. 
+
+```{r datafix3}
+breaks <-c(0, 10000, 50000, 100000, 250000, 1000000)
+
+Income.groups <-
+cut(custdata$Income,breaks = breaks, include.lowest=T)
+
+summary(Income.groups)
+```
+
+
+```{r datafix4}
+Income.groups <- as.character(Income.groups)
+
+Income.groups <- ifelse(is.na(Income.groups),"no income", Income.groups)
+
+summary(as.factor(Income.groups))
+```
+
+
+**Data Transformation**
+
+```{r dataTransformation}
+medianincome <- aggregate(income~state.of.res,custdata,FUN=median)
+colnames(medianincome) <- c('State','Median.Income')
+summary(medianincome)
+```
+
+
+```{r dataTransformation2}
+is.data.frame(medianincome)
+```
+
+```{r dataTransformation3}
+head(medianincome)
+```
+
+```{r dataTransformation4}
+custdata <- custdata[, names(custdata)!="Median.Income"]
+custdata <- merge(custdata, medianincome, by.x = "state.of.res", by.y="State")
+
+head(custdata[, c("state.of.res","income","Median.Income")])
+```
+
+```{r dataTransformation5}
+summary(custdata[, c("state.of.res","income","Median.Income")])
+```
+
+
+```{r dataTransformation6}
+custdata$income.norm <- with(custdata, income/Median.Income)
+
+summary(custdata$income.norm)
+```
+
+Normalize income by Median.Income
+
+```{r dataTransformation7}
+ggplot(subset(custdata, custdata$income > 1000), aes(x=income, y=as.numeric(health.ins))) +
+   geom_point(alpha=0.5, position=position_jitter(w=0.05, h=0.05)) + geom_smooth() + scale_x_log10() +
+   annotation_logticks(sides="bt")
+```
+
+You see that you can replace the income variable with a Boolean variable that indicates whether income is less than $20,000 
+
+```{r dataTransformation8}
+custdata$income.lt.20K <- custdata$income < 20000
+summary(custdata$income.lt.20K)
+```
+
+
+
