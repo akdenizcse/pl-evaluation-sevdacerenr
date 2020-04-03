@@ -15,8 +15,7 @@
 8. [ Example Codes ](#Example-Codes) 
    * [Exploring Data](#ExploringData) 
    * [Managing Data](#ManagingData)
-   * [Linear Regression](#LinearRegression)
-   * [Polynomial Regression](#PolynomialRegression)
+   * [Social Network Analysis](#Social)
 9. [ Things That Are Specific To R Language ? ](#Things-that-are-specific-to-R-language) 
 10. [ RESOURCES ](#RESOURCES) 
 
@@ -242,14 +241,13 @@ As an example, we gave "Exploring Data" and "Managing Data".
 
 [Html on Server](https://rpubs.com/Ceren/ManagingDataMarkdown) :arrow_right: When you click on the link, you can see the code and results written in html format.
 
-<a name="LinearRegression"></a>
-* **Simple Linear Regression:** We made a simple linear regression according to the distribution of the data in an existing dataset.
+<a name="Social"></a>
+* **Social Network Analysis:** Using the dataset given below, the graph was drawn clearly by following the users' follow-up on "Twitter". Graphs were drawn using features such as following users, how often they follow each other.
+
+[code](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/socialNetworkAnalysis.R) 
+[dataset](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/networkdata.csv)
 
 
-<a name="PolynomialRegression"></a>
-* **Polynomial Regression:** We made a simple polynomial regression according to the distribution of the data in an existing dataset.
-
-<a name="Things-that-are-specific-to-R-language"></a>
 ## Things That Are Specific To R Language ?
 
 The fact that R language is closer to the spoken language than other languages is one of the biggest features that distinguishes it. We do not have difficulty and do not have much trouble in learning this language. The features such as "html" and "notebook" in R language help us to write an explanation while writing the code. This feature is different from other applications. This language, made for statistics and mathematics, is widely used in Data Science and Big Data Analysis. Because, since data science also passes many statistical calculations, it is much easier and more convenient to write in a language that reduces statistics operations to easy.
