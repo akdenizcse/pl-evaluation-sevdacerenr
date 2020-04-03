@@ -244,8 +244,9 @@ As an example, we gave "Exploring Data" and "Managing Data".
 <a name="Social"></a>
 * **Social Network Analysis:** Using the dataset given below, the graph was drawn clearly by following the users' follow-up on "Twitter". Graphs were drawn using features such as following users, how often they follow each other.
 
-[code](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/socialNetworkAnalysis.R) 
-[dataset](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/networkdata.csv)
+[Code](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/socialNetworkAnalysis.R) 
+
+[Dataset](https://github.com/akdenizcse/pl-evaluation-sevdacerenr/blob/master/networkdata.csv)
 
 
 ## Things That Are Specific To R Language ?
