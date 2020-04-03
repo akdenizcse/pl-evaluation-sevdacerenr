@@ -253,6 +253,8 @@ As an example, we gave "Exploring Data" and "Managing Data".
 
 The fact that R language is closer to the spoken language than other languages is one of the biggest features that distinguishes it. We do not have difficulty and do not have much trouble in learning this language. The features such as "html" and "notebook" in R language help us to write an explanation while writing the code. This feature is different from other applications. This language, made for statistics and mathematics, is widely used in Data Science and Big Data Analysis. Because, since data science also passes many statistical calculations, it is much easier and more convenient to write in a language that reduces statistics operations to easy.
 
+At the same time, it provides a great convenience for the person who uses the instant debug. There is no need to examine all the codes. Since it is run line by line, error detection can be made easily.
+
 
 <a name="RESOURCES"></a>
 ## RESOURCES
