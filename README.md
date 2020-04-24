@@ -267,3 +267,5 @@ At the same time, it provides a great convenience for the person who uses the in
 6. [Setup R in Linux](https://ceaksan.com/tr/linux-ubuntu-r-lang-kurulum/)
 7. [Setup R in Mac](https://ceaksan.com/tr/macos-ortaminda-r-kurulumu/)
 8. [What is R Language](https://ceaksan.com/tr/r-programlama-dili-nedir/)
+
+**Hint:** Thinking together as team members, we implemented different strategies for each programming languages in this assignment.
